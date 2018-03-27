@@ -27,6 +27,9 @@ import myChart from './components/chart.js'
 import myAnimate from './components/animate.js'
 import myCalendar from './components/calendar.js'
 import myCard from './components/fetch.js'
+import subComponent from './components/subComponent.js'
+import subA from './components/subA.js'
+import subB from './components/subB.js'
 
 const ACTIVE = { color: 'red' }
 
@@ -52,7 +55,7 @@ class Sider extends React.Component {
 
     getUser = () => {
         this.setState({
-            username: 'luozh'
+            username: 'aaa'
         })
     }
 
@@ -77,6 +80,7 @@ class Sider extends React.Component {
                         <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>导航二</span></span>}>
                             <Menu.Item key="5"><Link to="/myCard">导航</Link></Menu.Item>
                             <Menu.Item key="6"><Link to="/myAnimate">关注</Link></Menu.Item>
+                            <Menu.Item key="7"><Link to="/subComponent">子组件</Link></Menu.Item>
                         </SubMenu>
                     </Menu>
                 </div>
@@ -107,6 +111,11 @@ render((
             <Route path="myCalendar" component={myCalendar} />
             <Route path="myAnimate" component={myAnimate} />
             <Route path="myCard" component={myCard} />
+            <Route path="subComponent" component={subComponent}>
+                <IndexRoute path="subA" component={subA} />
+                <Route path="subA" component={subA} />
+                <Route path="subB" component={subB} />
+            </Route>
         </Route>
     </Router>
 ), document.getElementById('app'));

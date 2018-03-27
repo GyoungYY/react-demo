@@ -18,8 +18,8 @@ export default class myTable extends React.Component {
                 key: i,
                 name: `Mr劳卜${i}`,
                 age: 18,
-                address: `西湖区湖底公园${i}号`,
-                remark: 'http://www.cnblogs.com/luozhihao/',
+                address: `公园${i}号`,
+                remark: 'http://www.jinjumao.club',
                 operate: '暂无'
             })
         }
@@ -53,7 +53,7 @@ export default class myTable extends React.Component {
             width: '20%',
             dataIndex: 'remark',
             render(text) {
-                return <a href={text} target="_blank">博客园</a>
+                return <a href={text} target="_blank">链接</a>
             }
         }, {
             title: '操作',
